@@ -1,0 +1,72 @@
+* {
+    box-sizing: border-box;
+}
+
+.slider {
+    max-width: 600px;
+    position: relative;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slides {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.slider input[type="radio"] {
+    display: none;
+}
+
+.navigation-manual {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: -40px;
+}
+
+.manual-btn {
+    border: 2px solid #ffffff;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.manual-btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+.manual-btn:hover {
+    background: #ffffff;
+}
+
+#radio1:checked ~ .slides {
+    transform: translateX(0);
+}
+
+#radio2:checked ~ .slides {
+    transform: translateX(-100%);
+}
+
+#radio3:checked ~ .slides {
+    transform: translateX(-200%);
+}
+#carouselExample {
+    margin: 20px auto; /* Adds a 20px margin on all sides and centers horizontally */
+    display: block; /* Ensures the element is treated as a block */
+}
+/* .container{
+    height: 100px;
+    align-content: center;
+    margin-left: 300px;
+   
+} */

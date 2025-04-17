@@ -1,0 +1,43 @@
+
+<div class="container-fluid text-center">
+    <div class="form-group mt-3 me-5 w-3 col-12">
+        <div class="row">
+            <div class="col-8">
+              <input type="number" id="search" class="form-control" name="search" placeholder="Search By Account Number" [(ngModel)]="search" />
+            </div>
+            <div class="col-auto">
+              <button class="btn btn-primary" (click)="searchByAcc()">Search</button>
+            </div>
+          </div>
+        <br/>
+        <div class="row col-2">
+        <button class="btn btn-primary mt-1 ms-0" (click)="export()">Export to excel</button>
+    </div>
+    </div>
+</div>
+
+<table class="table table-tripped">
+    
+    <thead class="table table-dark">
+        <th>ID</th>
+        <th>AccountHolderName</th>
+        <th>Account No</th>
+        
+        <th>Adhaar</th>
+        
+        
+    </thead>
+
+    <tbody class="mt-2 " >
+        <tr *ngFor="let account of generate,let i = index" class="tablebd">
+            <Td>{{i+1}}</Td>
+            <Td>{{account.accountHolderName}}</Td>
+            <Td>{{account.accountNumber}}</Td>
+            <Td>{{account.adhaar}}</Td>
+            
+            
+        </tr>
+    </tbody>
+
+
+</table>

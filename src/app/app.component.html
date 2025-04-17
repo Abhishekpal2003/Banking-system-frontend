@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-light bg-dark">
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a routerLink="accounts" routerLinkActive="active"class="nav-link" *ngIf="accountService.roleMatch(['ROLE_USER'])"><h4 class="text-white" >Account List</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="create-account" routerLinkActive="active" class="nav-link" *ngIf="accountService.roleMatch(['ROLE_USER'])"><h4 class="text-white">Add Account</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="home" routerLinkActive="active" class="nav-link"><h4 class="text-white">Home</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="login" *ngIf="!isLoggedIn()" routerLinkActive="active" class="nav-link"><h4 class="text-white">Login</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="generate" routerLinkActive="active" class="nav-link"><h4 class="text-white" *ngIf="accountService.roleMatch(['ROLE_ADMIN'])">Generate Acc No</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="adminlist" routerLinkActive="active" class="nav-link"><h4 class="text-white" *ngIf="accountService.roleMatch(['ROLE_ADMIN'])">Generate Account List</h4></a>
+        </li>
+        <li class="nav-item">
+            <a routerLink="home" (click)="logout()" *ngIf="isLoggedIn()" routerLinkActive="active" class="nav-link"><h4 class="text-danger">Logout</h4></a>
+        </li>
+        
+        <div style="color: red;" class="shadow-sm">
+        <h1 class="text-align-center" style="margin-left: 350px;">{{title}}</h1>
+        
+    </div>
+    </ul>
+    
+
+</nav>
+
+<div>
+    
+<router-outlet></router-outlet>
+</div>

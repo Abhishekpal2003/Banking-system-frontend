@@ -1,0 +1,29 @@
+<div class="container-fluid bg-dark mt-2">
+<div class="col-md-8 offset-md-3 container bg-secondary px-4 py-4">
+    <h1 class="text-center">Generate Account Number</h1>
+    <div *ngIf="accountCreate" class="alert alert-success">
+        Account Number Generated Succesfully...
+    </div>
+<form (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Account Holder Name</label>
+        <input type="text" id="accountHolderName" class="form-control" name="accountHolderName" placeholder="Enter the Account Holder Name" [(ngModel)]="generate.accountHolderName"/>
+    </div>
+    
+    <div>
+        <label>Adhaar No</label>
+        <input type="number" id="Adhaar" class="form-control" name="Adhaar" placeholder="Enter Adhaar No" [(ngModel)]="generate.adhaar"/>
+    </div>
+    <div class="">
+        
+        <label>Account Number</label>
+        <button type="button" class="btn btn-success my-2 ms-2" (click)="generate1()" >Generate</button>
+        <input type="number" id="AccountNo" class="form-control" name="AccountNo" placeholder="Account No"  [(ngModel)]="generate.accountNumber"/>
+        
+        
+    </div>
+    <br/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+</div>

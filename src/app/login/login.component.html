@@ -1,0 +1,26 @@
+
+<body style="background-image: url('./assets/bg3.avif')">
+  <div class="login-container mt-5">
+    <div class="card login-card">
+      <h2 class="text-center">Login</h2>
+      <form action="#" method="post">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" [(ngModel)]="login.email" id="email" name="email" placeholder="Enter username" required >
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" [(ngModel)]="login.password" id="password" name="password" placeholder="Enter password" required >
+        </div>
+        
+        <button type="submit" class="btn btn-custom w-100" (click)="logindata()">Login</button>
+      </form>
+      <div class="text-center mt-3">
+        <!-- <a href="#">Forgot Password?</a>   -->
+        <a href="#" (click)="redirectToRegister($event)">Sign Up</a>
+      </div>
+    </div>
+  </div>
+
+
+  </body>
